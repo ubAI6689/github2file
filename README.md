@@ -6,9 +6,10 @@ This Python script allows you to download and process files from a GitHub reposi
 
 - Download and process files from a GitHub repository
 - Support for both public and private repositories
-- Filter files based on programming language (Python or Go)
+- Filter files based on programming languages (Python, Go, Markdown, Bash, Dockerfile)
 - Exclude certain directories, file types, and test files
 - Remove comments and docstrings from Python source code (optional)
+- Keep the README.md file (optional)
 - Specify a branch or tag to download from (default: "master")
 
 ## Usage
@@ -29,29 +30,30 @@ Replace `<USERNAME>` with your GitHub username and `<GITHUB_ACCESS_TOKEN>` with 
 
 ### Optional Arguments
 
-- `--lang`: Specify the programming language of the repository. Choices: "go" or "python" (default: "python").
+- `--languages`: Specify the programming languages of the repository. Choices: 'go', 'py', 'md', 'sh', 'Dockerfile' (default: ['py']).
 - `--keep-comments`: Keep comments and docstrings in the source code (only applicable for Python).
+- `--keep-readme`: Keep the README.md file.
 - `--branch_or_tag`: Specify the branch or tag of the repository to download (default: "master").
 
 ### Example
 
-To download and process files from the Hugging Face Transformers repository, run:
+To download and process files from the Hugging Face Transformers repository, including Python, Markdown, and Bash files, run:
 
 ```
-python github2file.py https://github.com/huggingface/transformers
+python github2file.py https://github.com/huggingface/transformers --languages py md sh
 ```
 
-This will create a file named `transformers_python.txt` containing the combined Python source code from the repository.
+This will create a file named `transformers_combined.txt` containing the combined source code from the repository.
 
-To download and process files from a private repository, run:
+To download and process files from a private repository, including the README.md file, run:
 
 ```
-python github2file.py https://<USERNAME>:<GITHUB_ACCESS_TOKEN>@github.com/username/private-repo
+python github2file.py https://<USERNAME>:<GITHUB_ACCESS_TOKEN>@github.com/username/private-repo --keep-readme
 ```
 
 ## Output
 
-The script will create a file named `repository_language.txt` (e.g., `transformers_python.txt`) containing the combined source code from the specified repository. You can then share this file with chatbots like Claude for further analysis or discussion.
+The script will create a file named `repository_combined.txt` (e.g., `transformers_combined.txt`) containing the combined source code from the specified repository. You can then share this file with chatbots like Claude for further analysis or discussion.
 
 ## Requirements
 
