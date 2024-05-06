@@ -30,7 +30,7 @@ Replace `<USERNAME>` with your GitHub username and `<GITHUB_ACCESS_TOKEN>` with 
 
 ### Optional Arguments
 
-- `--languages`: Specify the programming languages of the repository. Choices: 'go', 'py', 'md', 'sh', 'Dockerfile' (default: ['py']).
+- `--lang`: Specify the programming languages of the repository. Choices: 'go', 'py', 'md', 'sh', 'Dockerfile' (default: ['py']).
 - `--keep-comments`: Keep comments and docstrings in the source code (only applicable for Python).
 - `--keep-readme`: Keep the README.md file.
 - `--branch_or_tag`: Specify the branch or tag of the repository to download (default: "master").
