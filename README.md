@@ -40,7 +40,7 @@ Replace `<USERNAME>` with your GitHub username and `<GITHUB_ACCESS_TOKEN>` with 
 To download and process files from the Hugging Face Transformers repository, including Python, Markdown, and Bash files, run:
 
 ```
-python github2file.py https://github.com/huggingface/transformers --languages py md sh
+python github2file.py https://github.com/huggingface/transformers --lang py md sh
 ```
 
 This will create a file named `transformers_combined.txt` containing the combined source code from the repository.
